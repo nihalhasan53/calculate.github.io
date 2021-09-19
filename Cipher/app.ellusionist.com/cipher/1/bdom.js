@@ -353,7 +353,7 @@ function initialise() {
         localStorage.setItem("fieldvalue", JSON.stringify("0"));
         localStorage.setItem("automaticallyUpdated", JSON.stringify(false));
         //localStorage.setItem("MonthDisplaysIncorrectly", JSON.stringify(false));
-        localStorage.setItem("Licenced", JSON.stringify("XXXXXXX"));
+        localStorage.setItem("Licenced", JSON.stringify("DTC11SCADC"));
         localStorage.setItem("DisplayMonthName", JSON.stringify(false));
         localStorage.setItem("SMS", JSON.stringify(SMSOn));
         localStorage.setItem("SMSOnEqualsPress", JSON.stringify(SMSOnEqualsPress));
