@@ -1,0 +1,460 @@
+<html class="ui-mobile"><head><base href="https://app.ellusionist.com/cipher/1/Options.html">
+	<meta charset="UTF-8">
+	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+	<meta name="Author" content="Ellusionist.com, Inc">
+	<meta name="format-detection" content="telephone=no">
+	<title>Options</title>
+	<link rel="stylesheet" href="switchery.min.css">
+	<script src="./jquery-3.1.1.slim.min.js"></script>
+	<script src="./jquery-1.10.2.min.js"></script>
+	<script>
+		jQuery(document).on("mobileinit", function () {
+			jQuery.mobile.autoInitializePage = false;
+		});
+	</script>
+	<script src="./jquery.mobile-1.4.5.min.js"></script>
+	<script type="application/javascript" src="./fastclick.js"></script>
+	<script src="switchery.min.js"></script>
+	<script>
+		var BirthdayInput;
+		var BirthdayDayPosition;
+		var BirthdayMonthPosition;
+		var BirthdayYearPosition;
+		var YearMode;
+		var DisplayStarSign;
+		var Use13StarSigns;
+		var IgnoreRevealBeforeClear;
+		var HoldEqualsToReveal;
+		var LockOrientationBeforeClear;
+		var ToxicForce;
+		var ToxicForceNumber;
+		var ToxicRevealEqualsPressNumber;
+		var iOS11Style;
+		var Licenced = false;
+		var IgnoreCalcResultsInReveal;
+		//var MonthDisplaysIncorrectly;
+		var DisplayMonthName;
+		var showPiCalc;
+		var pinPos;
+	</script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1028.0" data-gr-ext-installed="" style="">
+	<div id="myContent" style="overflow: scroll;">
+		<table id="optionsTable">
+			<tbody>
+			
+			<tr>
+				<td>iOS 11 Style</td>
+				<td><input type="checkbox" id="iOS11Style" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(100, 189, 99) 0px 0px 0px 16px inset; border-color: rgb(100, 189, 99); background-color: rgb(100, 189, 99); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;"><small style="left: 20px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s; background-color: rgb(255, 255, 255);"></small></span></td>
+			</tr>
+			<tr>
+				<td>Birthday Entry</td>
+				<td><input type="checkbox" id="birthdayEntry" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(100, 189, 99) 0px 0px 0px 16px inset; border-color: rgb(100, 189, 99); background-color: rgb(100, 189, 99); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;"><small style="left: 20px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s; background-color: rgb(255, 255, 255);"></small></span></td>
+			</tr>
+			<tr>
+				<td>
+					Day Position </td>
+				<td>
+					<input type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="99" name="daypos" id="daypos" maxlength="2" value="1" title="Day Position" style="width:30px; text-align:center; height:25px;"></td>
+			</tr>
+			<tr>
+				<td>Month Position</td>
+				<td>
+					<input type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="99" name="monthpos" id="monthpos" maxlength="2" value="1" title="Month Position" style="width:30px; text-align:center; height:25px;"></td>
+			</tr>
+			<tr>
+				<td>Display Month Name</td>
+				<td><input type="checkbox" id="DisplayMonthName" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span></td>
+			</tr>
+			<tr>
+				<td>Year Position</td>
+				<td>
+					<input type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="99" name="yearpos" id="yearpos" maxlength="2" value="1" title="Year Position" style="width:30px; text-align:center; height:25px;"></td>
+			</tr>
+			<tr>
+				<td>Year Mode (Birth Year/Age) </td>
+				<td><input type="checkbox" id="yearmode" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span></td>
+			</tr>
+			<tr>
+				<td>Display Star Sign </td>
+				<td><input type="checkbox" id="displayStarSign" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(100, 189, 99) 0px 0px 0px 16px inset; border-color: rgb(100, 189, 99); background-color: rgb(100, 189, 99); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;"><small style="left: 20px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s; background-color: rgb(255, 255, 255);"></small></span></td>
+			</tr>
+			<tr>
+				<td>Use 13 Zodiac Signs </td>
+				<td><input type="checkbox" id="Use13Signs" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span></td>
+			</tr>
+			<tr>
+				<td>Ignore Calculation Results in Reveal</td>
+				<td><input type="checkbox" id="IgnoreCalcResultsInReveal" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span></td>
+			</tr>
+			<!--<tr><td>Month Displays Incorrectly</td><td><input type="checkbox" id="MonthDisplaysIncorrectly" /></td>
+    </tr>-->
+			<tr>
+				<td>Ignore reveal before clear</td>
+				<td> <input type="checkbox" id="IgnoreRevealBeforeClear" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span></td>
+			</tr>
+			<tr>
+				<td>Hide Reveal On Equals Release</td>
+				<td> <input type="checkbox" id="HoldEqualsToReveal" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span></td>
+			</tr>
+			<!--<tr><td>Lock Orientation before clear</td><td>	<input type="checkbox" id="LockOrientationBeforeClear" /></td>
+    </tr>-->
+			<tr>
+				<td>Toxic Force</td>
+				<td><input type="checkbox" id="ToxicForce" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span></td>
+			</tr>
+			<tr>
+				<td>Toxic Force Number</td>
+				<td><input type="number" inputmode="decimal" name="ToxicNumber" title="Toxic Number" id="ToxicNumber" style="text-align:center; height:25px;"></td>
+			</tr>
+			<tr>
+				<td>Reveal Toxic on Equals Press</td>
+				<td><input type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="99" name="ToxicRevealEqualsPressNumber" id="ToxicRevealEqualsPressNumber" maxlength="2" value="1" title="Month Position" style="width:30px; text-align:center; height:25px;"></td>
+			</tr>
+			<tr>
+				<td>Show Pi Calc</td>
+				<td><input type="checkbox" id="piCalc" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span></td>
+			</tr>
+			<tr id="pinPosRow" style="display: none">
+				<td>Pin Code Position</td>
+				<td><input type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="99" name="pincodepos" id="pincodepos" maxlength="2" title="Pin Code Pos." style="width:30px; text-align:center; height:25px;"></td>
+			</tr>
+			<tr>
+				<td>Version</td>
+				<td>3.3.0</td>
+			</tr>
+			<tr>
+				<td>Latest Update</td>
+				<td>Pi Book Test</td>
+			</tr>
+		</tbody></table>
+
+
+	</div>
+	<script>
+		function submitLicense() {
+			try{
+
+				$.ajax({
+						type: "POST",
+						url: "//app.ellusionist.com/webapi/Cipher_Validate.php" ,
+						data: { key: $("#LicenceKey").val() },
+						success : function(result) { 
+							if(result === "YAY!"){
+								localStorage.setItem("LicenseKey", JSON.stringify($("#LicenceKey").val()));
+								document.getElementById("LicenceKey").disabled = true;
+								document.getElementById("LicenceKey").value = "Licensed";
+								document.getElementById("submitLicense").disabled = true;
+								localStorage.setItem("Licenced", JSON.stringify(true));
+								document.getElementById("optionsTable").deleteRow(0);
+								document.getElementById("optionsTable").deleteRow(0);
+								alert("License Activated");
+							}
+							else{
+								alert("Invalid License Key");
+								document.getElementById("submitLicense").disabled = false;
+							}
+						},
+						error : function(xhr, status, error){
+							if (xhr.responseText != "") {
+								var jsonResponseText = $.parseJSON(xhr.responseText);
+								var jsonResponseStatus = '';
+								var message = '';
+								$.each(jsonResponseText, function(name, val) {
+									if (name == "ResponseStatus") {
+										jsonResponseStatus = $.parseJSON(JSON.stringify(val));
+										 $.each(jsonResponseStatus, function(name2, val2) {
+											 if (name2 == "Message") {
+												 message = val2;
+											 }
+										 });
+									}
+								});
+								alert(message);
+							}
+							else{
+								alert(error);
+							}
+							document.getElementById("submitLicense").disabled = false;
+						}
+					});
+			}
+			catch(err){
+				alert(err);
+				document.getElementById("submitLicense").disabled = false;
+			}
+		}
+
+
+		var ios11styleswitch = new Switchery(document.querySelector('#iOS11Style'));
+		var birthdayentryswitch = new Switchery(document.querySelector('#birthdayEntry'));
+		var yearmodeswitch = new Switchery(document.querySelector('#yearmode'));
+		var displaystarsignswitch = new Switchery(document.querySelector('#displayStarSign'));
+		var use13starsignsswitch = new Switchery(document.querySelector('#Use13Signs'));
+		var ignorerevealbeforecleaswitch = new Switchery(document.querySelector('#IgnoreRevealBeforeClear'));
+		var holdequalstorevealswitch = new Switchery(document.querySelector('#HoldEqualsToReveal'));
+		//var lockorientationbeforeclearswitch = new Switchery(document.querySelector('#LockOrientationBeforeClear'));
+		var toxicforceswitch = new Switchery(document.querySelector('#ToxicForce'));
+		var ignorecalcresultsinrevealswitch = new Switchery(document.querySelector('#IgnoreCalcResultsInReveal'));
+		//var MonthDisplaysIncorrectlySwitch = new Switchery(document.querySelector('#MonthDisplaysIncorrectly'));
+		var DisplayMonthNameSwitch = new Switchery(document.querySelector('#DisplayMonthName'));
+		var piCalcSwitch = new Switchery(document.querySelector('#piCalc'));
+		var ios11styleswitchbase = document.getElementById('iOS11Style');
+		var birthdayentryswitchbase = document.getElementById('birthdayEntry');
+		var yearmodeswitchbase = document.getElementById('yearmode');
+		var displaystarsignswitchbase = document.getElementById('displayStarSign');
+		var use13starsignsswitchbase = document.getElementById('Use13Signs');
+		var ignorerevealbeforecleaswitchbase = document.getElementById('IgnoreRevealBeforeClear');
+		var holdequalstorevealswitchbase = document.getElementById('HoldEqualsToReveal');
+		//var lockorientationbeforeclearswitchbase = document.getElementById('LockOrientationBeforeClear');
+		var toxicforceswitchbase = document.getElementById('ToxicForce');
+		var ignorecalcresultsinrevealswitchbase = document.getElementById('IgnoreCalcResultsInReveal');
+		//var MonthDisplaysIncorrectlySwitchBase = document.getElementById('MonthDisplaysIncorrectly');
+		var DisplayMonthNameSwitchBase = document.getElementById('DisplayMonthName');
+		var piCalcSwitchBase = document.getElementById('piCalc');
+
+		piCalcSwitchBase.onchange = () => {
+			showPiCalc = piCalcSwitchBase.checked;
+			localStorage.setItem('PiCalc', JSON.stringify(showPiCalc));
+			if (showPiCalc) {
+				document.getElementById('pinPosRow').style.display = 'table-row';
+				document.getElementById("pincodepos").oninput = function () {
+				localStorage.setItem("PinPos", this.value);
+			}
+			} else {
+				document.getElementById('pinPosRow').style.display = 'none';
+				localStorage.removeItem('PinPos');
+			}
+		}
+
+		document.getElementById("daypos").oninput = function () {
+			if (this.value.length > 2) {
+				this.value = this.value.slice(0, 2);
+			}
+			localStorage.setItem("BirthdayDayPosition", JSON.stringify(parseInt(this.value)));
+		}
+		document.getElementById("monthpos").oninput = function () {
+			if (this.value.length > 2) {
+				this.value = this.value.slice(0, 2);
+			}
+			localStorage.setItem("BirthdayMonthPosition", JSON.stringify(parseInt(this.value)));
+		}
+		document.getElementById("yearpos").oninput = function () {
+			if (this.value.length > 2) {
+				this.value = this.value.slice(0, 2);
+			}
+			localStorage.setItem("BirthdayYearPosition", JSON.stringify(parseInt(this.value)));
+		}
+		document.getElementById("ToxicNumber").oninput = function () {
+			localStorage.setItem("ToxicForceNumber", JSON.stringify(parseFloat(this.value)));
+		}
+		document.getElementById("ToxicRevealEqualsPressNumber").oninput = function () {
+			localStorage.setItem("ToxicRevealEqualsPressNumber", JSON.stringify(parseInt(this.value)));
+		}
+		birthdayentryswitchbase.onchange = function () {
+
+			BirthdayInput = birthdayentryswitchbase.checked;
+
+			localStorage.setItem("BirthdayInput", JSON.stringify(BirthdayInput));
+			if (BirthdayInput === false) {
+				displaystarsignswitchbase.checked = false;
+				displaystarsignswitch.handleOnchange(false);
+				displaystarsignswitch.disable();
+
+				use13starsignsswitchbase.checked = false
+				use13starsignsswitch.handleOnchange(false);
+				use13starsignsswitch.disable();
+				document.getElementById("daypos").value = "";
+				document.getElementById("monthpos").value = "";
+				document.getElementById("yearpos").value = "";
+				document.getElementById("daypos").disabled = true;
+				document.getElementById("monthpos").disabled = true;
+				document.getElementById("yearpos").disabled = true;
+			} else {
+				displaystarsignswitch.enable();
+				document.getElementById("daypos").disabled = false;
+				document.getElementById("monthpos").disabled = false;
+				document.getElementById("yearpos").disabled = false;
+				document.getElementById("daypos").value = "1";
+				document.getElementById("monthpos").value = "2";
+				document.getElementById("yearpos").value = "3";
+				//use13starsignsswitch.enable();
+			}
+		};
+		
+		yearmodeswitchbase.onchange = function () {
+			YearMode = yearmodeswitchbase.checked;
+			localStorage.setItem("yearmode", JSON.stringify(YearMode));
+		}
+		displaystarsignswitchbase.onchange = function () {
+			DisplayStarSign = displaystarsignswitchbase.checked;
+			localStorage.setItem("DisplayStarSign", JSON.stringify(DisplayStarSign));
+			if (DisplayStarSign === false) {
+				use13starsignsswitchbase.checked = false
+				use13starsignsswitch.handleOnchange(false);
+				use13starsignsswitch.disable();
+			} else {
+				use13starsignsswitch.enable();
+			}
+		};
+		use13starsignsswitchbase.onchange = function () {
+			Use13StarSigns = use13starsignsswitchbase.checked;
+			localStorage.setItem("Use13StarSigns", JSON.stringify(Use13StarSigns));
+		};
+		ignorerevealbeforecleaswitchbase.onchange = function () {
+			IgnoreRevealBeforeClear = ignorerevealbeforecleaswitchbase.checked;
+			localStorage.setItem("IgnoreRevealBeforeClear", JSON.stringify(IgnoreRevealBeforeClear));
+		};
+		holdequalstorevealswitchbase.onchange = function () {
+			HoldEqualsToReveal = holdequalstorevealswitchbase.checked;
+			localStorage.setItem("HoldEqualsToReveal", JSON.stringify(HoldEqualsToReveal));
+		};
+		/*lockorientationbeforeclearswitchbase.onchange = function() {
+			LockOrientationBeforeClear = lockorientationbeforeclearswitchbase.checked;
+			localStorage.setItem("LockOrientationBeforeClear", JSON.stringify(LockOrientationBeforeClear));
+		};*/
+		toxicforceswitchbase.onchange = function () {
+			ToxicForce = toxicforceswitchbase.checked;
+			localStorage.setItem("ToxicForce", JSON.stringify(ToxicForce));
+		};
+		ios11styleswitchbase.onchange = function () {
+			iOS11Style = ios11styleswitchbase.checked;
+			localStorage.setItem("iOS11Style", JSON.stringify(iOS11Style));
+		};
+		ignorecalcresultsinrevealswitchbase.onchange = function () {
+			IgnoreCalcResultsInReveal = ignorecalcresultsinrevealswitchbase.checked;
+			localStorage.setItem("IgnoreCalcResultsInReveal", JSON.stringify(IgnoreCalcResultsInReveal));
+		}
+		/*MonthDisplaysIncorrectlySwitchBase.onchange = function(){
+			MonthDisplaysIncorrectly = MonthDisplaysIncorrectlySwitchBase.checked;
+			localStorage.setItem("MonthDisplaysIncorrectly", JSON.stringify(MonthDisplaysIncorrectly));
+		}*/
+		DisplayMonthNameSwitchBase.onchange = function () {
+			DisplayMonthName = DisplayMonthNameSwitchBase.checked;
+			localStorage.setItem("DisplayMonthName", JSON.stringify(DisplayMonthName));
+		}
+
+		function initialise() {
+			try {
+				if ('addEventListener' in document) {
+					document.addEventListener('DOMContentLoaded', function () {
+						"use strict";
+						FastClick.attach(document.body);
+						// $("#myContent").height((window.innerHeight - 100) + "px");
+					}, false);
+				}
+				
+				// document.getElementById('lasterror').textContent = JSON.parse(localStorage.getItem("lastError"));
+				Licenced = JSON.parse(localStorage.getItem("Licenced"));
+				iOS11Style = JSON.parse(localStorage.getItem("iOS11Style"));
+				BirthdayInput = JSON.parse(localStorage.getItem("BirthdayInput"));
+				BirthdayDayPosition = JSON.parse(localStorage.getItem("BirthdayDayPosition"));
+				BirthdayMonthPosition = JSON.parse(localStorage.getItem("BirthdayMonthPosition"));
+				BirthdayYearPosition = JSON.parse(localStorage.getItem("BirthdayYearPosition"));
+				YearMode = JSON.parse(localStorage.getItem("yearmode"));
+				DisplayStarSign = JSON.parse(localStorage.getItem("DisplayStarSign"));
+				Use13StarSigns = JSON.parse(localStorage.getItem("Use13StarSigns"));
+				IgnoreRevealBeforeClear = JSON.parse(localStorage.getItem("IgnoreRevealBeforeClear"));
+				HoldEqualsToReveal = JSON.parse(localStorage.getItem("HoldEqualsToReveal"));
+				IgnoreCalcResultsInReveal = JSON.parse(localStorage.getItem("IgnoreCalcResultsInReveal"));
+				//LockOrientationBeforeClear = JSON.parse(localStorage.getItem("LockOrientationBeforeClear"));
+				ToxicForce = JSON.parse(localStorage.getItem("ToxicForce"));
+				ToxicForceNumber = JSON.parse(localStorage.getItem("ToxicForceNumber"));
+				ToxicRevealEqualsPressNumber = JSON.parse(localStorage.getItem("ToxicRevealEqualsPressNumber"));
+				//MonthDisplaysIncorrectly = JSON.parse(localStorage.getItem("MonthDisplaysIncorrectly"));
+				DisplayMonthName = JSON.parse(localStorage.getItem("DisplayMonthName"));
+				showPiCalc = JSON.parse(localStorage.getItem("PiCalc"));
+				pinPos = JSON.parse(localStorage.getItem("PinPos"));
+
+				document.getElementById("ToxicNumber").value = ToxicForceNumber;
+				document.getElementById("ToxicRevealEqualsPressNumber").value = ToxicRevealEqualsPressNumber;
+				if (DisplayMonthName) {
+					DisplayMonthNameSwitchBase.checked = true;
+					DisplayMonthNameSwitch.handleOnchange(true);
+				}
+				/*if(MonthDisplaysIncorrectly){
+					MonthDisplaysIncorrectlySwitchBase.checked = true;
+					MonthDisplaysIncorrectlySwitch.handleOnchange(true);
+				}*/
+				if (IgnoreCalcResultsInReveal) {
+					ignorecalcresultsinrevealswitchbase.checked = true;
+					ignorecalcresultsinrevealswitch.handleOnchange(true);
+				}
+				if (iOS11Style) {
+					ios11styleswitchbase.checked = true;
+					ios11styleswitch.handleOnchange(true);
+				}
+
+				if (BirthdayInput) {
+					//birthdayentryswitch.markAsSwitched();
+					birthdayentryswitchbase.checked = true;
+					birthdayentryswitch.handleOnchange(true);
+					document.getElementById("daypos").value = BirthdayDayPosition
+					document.getElementById("monthpos").value = BirthdayMonthPosition
+					document.getElementById("yearpos").value = BirthdayYearPosition
+				} else {
+					displaystarsignswitch.disable();
+					document.getElementById("daypos").value = "";
+					document.getElementById("monthpos").value = "";
+					document.getElementById("yearpos").value = "";
+					document.getElementById("daypos").disabled = true;
+					document.getElementById("monthpos").disabled = true;
+					document.getElementById("yearpos").disabled = true;
+				}
+				if (YearMode) {
+					yearmodeswitchbase.checked = true;
+					yearmodeswitch.handleOnchange(true);
+				}
+				if (DisplayStarSign) {
+					//displaystarsignswitch.markAsSwitched();
+					displaystarsignswitchbase.checked = true;
+					displaystarsignswitch.handleOnchange(true);
+				} else {
+					use13starsignsswitch.disable();
+				}
+				if (Use13StarSigns) {
+					use13starsignsswitchbase.checked = true;
+					use13starsignsswitch.handleOnchange(true);
+				}
+				if (IgnoreRevealBeforeClear) {
+					ignorerevealbeforecleaswitchbase.checked = true;
+					ignorerevealbeforecleaswitch.handleOnchange(true);
+				}
+				if (HoldEqualsToReveal) {
+					holdequalstorevealswitchbase.checked = true;
+					holdequalstorevealswitch.handleOnchange(true);
+				}
+				/*if(LockOrientationBeforeClear)
+				{
+					lockorientationbeforeclearswitchbase.checked = true;
+					lockorientationbeforeclearswitch.handleOnchange(true);
+				}*/
+				if (ToxicForce) {
+					toxicforceswitchbase.checked = true;
+					toxicforceswitch.handleOnchange(true);
+				}
+				if (Licenced) {
+					document.getElementById("LicenceKey").disabled = true;
+					document.getElementById("LicenceKey").value = "Licensed";
+					document.getElementById("submitLicense").disabled = true;
+					document.getElementById("optionsTable").deleteRow(0);
+					document.getElementById("optionsTable").deleteRow(0);
+				}
+				if (showPiCalc) {
+					piCalcSwitchBase.checked = true;
+					piCalcSwitch.handleOnchange(true);
+					document.getElementById('pincodepos').value = pinPos;
+				} else {
+					document.getElementById('pincodepos').value = '';
+				}
+			} catch (exception) {
+				alert(exception);
+			}
+		}
+		initialise();
+	</script>
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

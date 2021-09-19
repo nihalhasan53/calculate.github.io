@@ -1,0 +1,178 @@
+<!doctype html>
+<!--*************************************************************************
+ * Cipher Copyright © 2017, Ellusionist.com, Inc
+ * 
+ * ELLUSIONIST CONFIDENTIAL
+ * __________________
+ * 
+ *  2017 Ellusionist.com, Inc 
+ *  All Rights Reserved.
+ * 
+ * NOTICE: All information contained herein is, and remains
+ * the property of Ellusionist.com, Inc and its suppliers,
+ * if any. The intellectual and technical concepts contained
+ * herein are proprietary to Ellusionist.com, Inc
+ * and its suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * You are strictly prohibited to disseminate, reproduce, modify, reverse engineer, 
+ * decompile, disassemble, copy, publish, rent, lend, lease or derive works 
+ * from this software or circumvent any technical protection measures contained herein
+ * unless prior written permission is obtained from Ellusionist.com, Inc.
+ *-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" id="vp" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link rel="apple-touch-icon" href="./57.png">-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./180.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./120.png">
+    <link rel="apple-touch-startup-image" href="./launch.png">
+    <script src="./sprintf.min.js"></script>
+    <script src="./jquery-3.1.1.slim.min.js"></script>
+    <script src="./jquery-1.10.2.min.js"></script>
+    <script src="./jquery.mobile-1.4.5.min.js"></script>
+    <script type="application/javascript" src="./fastclick.js"></script>
+    <link rel="stylesheet" href="./jquery.webui-popover.css">
+    <link id="pagestyle" rel="stylesheet" href="./calcstyle.css?v=3.3.0">
+    <script src="./bdom.js?v=3.3.0"></script>
+    <script src="./adom.js?v=3.3.0"></script>
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').then(() => {
+                    console.log('Service Worker Registered')
+                })
+            })
+        }
+    </script>
+</head>
+
+<body id="body">
+    <div align="center" id="wholecontainer">
+        <div class="calcField" id="calcField">
+            <div class="calcField-content" id="innerCalcField">Invalid Browser.</div>
+        </div>
+
+        <table id="calculatorbuttons" style="display:table;" cellpadding="1" border="1" cellspacing="1" width="" height="">
+            <tr>
+                <td class="topButton" id="btnac" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">AC</td>
+                <td class="topButton" id="btninv" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">+/-</td>
+                <td class="topButton" id="btnperc" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">%</td>
+                <td class="operationButton" id="btndivide" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">÷</td>
+            </tr>
+            <tr>
+                <td class="numberButton" id="btn7" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">7</td>
+                <td class="numberButton" id="btn8" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">8</td>
+                <td class="numberButton" id="btn9" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">9</td>
+                <td class="operationButton" id="btnMultiply" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">×</td>
+            </tr>
+            <tr>
+                <td class="numberButton" id="btn4" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">4</td>
+                <td class="numberButton" id="btn5" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">5</td>
+                <td class="numberButton" id="btn6" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">6</td>
+                <td class="operationButton" id="btnMinus" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">−</td>
+            </tr>
+            <tr>
+                <td class="numberButton" id="btn1" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">1</td>
+                <td class="numberButton" id="btn2" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">2</td>
+                <td class="numberButton" id="btn3" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">3</td>
+                <td class="operationButton" id="btnAdd" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">＋</td>
+            </tr>
+            <tr>
+                <td class="numberButton" id="btn0" colspan="2" width="50%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();" style="text-align: left; padding-left: 10%;">0</td>
+                <td class="numberButton" id="btnDecimal" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">.</td>
+                <td class="operationButton" id="btnEquals" width="25%" ontouchstart="btnMouseDown();" ontouchend="btnMouseUp();">=</td>
+            </tr>
+        </table>
+    </div>
+    <div style="width:100%; height:100%; background:#000000; background-color:#000000;">
+        <table id="revealTable" style="background:#000000;background-color:#000000;bordercolor:#000000; padding:0; margin:0 auto; color:#FFFFFF;" cellpadding="0" border="1" cellspacing="0">
+        </table>
+    </div>
+</body>
+<script>
+    doOnOrientationChange();
+    initialise();
+</script>
+<script src="./jquery.webui-popover.js"></script>
+<script type="text/javascript">
+    // localStorage.removeItem("lastError");
+
+    function isRunningStandalone() {
+        return (window.matchMedia('(display-mode: standalone)').matches);
+    }
+
+    function swapStyleSheet(sheet) {
+        document.getElementById("pagestyle").setAttribute("href", sheet);
+    }
+    var override = false;
+    if (!override) {
+        if (/iP(ad|od|hone)/i.test(window.navigator.userAgent) && /WebKit/i.test(window.navigator.userAgent) && !(/(CriOS|FxiOS|OPiOS|mercury)/i.test(window.navigator.userAgent))) {
+            if (window.navigator.standalone === true) {
+                var head = document.getElementsByTagName('head')[0];
+                var js = document.createElement("script");
+                js.src = "./adom.js?v=8";
+                js.type = 'text/javascript';
+                head.appendChild(js);
+                document.getElementById("innerCalcField").innerHTML = localStorage.getItem("fieldvalue").replace(/['"]+/g, '');
+                document.getElementById("doc").className =
+                    document.getElementById("doc").className
+                    .replace(new RegExp('(?:^|\\s)' + 'blackBackground' + '(?:\\s|$)'), ' ');
+
+            }
+        } else if (/(android)/i.test(navigator.userAgent)) {
+            swapStyleSheet("calcstyleandroid.css");
+            if (isRunningStandalone()) {
+                var head = document.getElementsByTagName('head')[0];
+                var js = document.createElement("script");
+                js.src = "./adom.js?v=8";
+                js.type = 'text/javascript';
+                head.appendChild(js);
+                document.getElementById("innerCalcField").innerHTML = localStorage.getItem("fieldvalue").replace(/['"]+/g, '');
+
+                const doc = document.getElementById("doc");
+                if (doc) {
+                    doc.className = doc.className.replace(new RegExp('(?:^|\\s)' + 'blackBackground' + '(?:\\s|$)'), ' ');
+                }
+            }
+        }
+    } else {
+        if (/(android)/i.test(navigator.userAgent)) {
+            swapStyleSheet("calcstyleandroid.css");
+        }
+        var head = document.getElementsByTagName('head')[0];
+        var js = document.createElement("script");
+        js.src = "./adom.js?v=8";
+        js.type = 'text/javascript';
+        head.appendChild(js);
+        document.getElementById("innerCalcField").innerHTML = localStorage.getItem("fieldvalue").replace(/['"]+/g, '');
+        const doc = document.getElementById("doc");
+        if (doc) {
+            doc.className = doc.className
+                .replace(new RegExp('(?:^|\\s)' + 'blackBackground' + '(?:\\s|$)'), ' ');
+        }
+        /*
+		document.getElementById("doc").className =
+  document.getElementById("doc").className
+    .replace(new RegExp('(?:^|\\s)'+ 'blackBackground' + '(?:\\s|$)'), ' ');
+	}
+		*/
+
+    }
+
+    resize("#innerCalcField", 100);
+    document.addEventListener('focusout', function(e) {
+        window.scrollTo(0, 0)
+    });
+</script>
+
+</html>

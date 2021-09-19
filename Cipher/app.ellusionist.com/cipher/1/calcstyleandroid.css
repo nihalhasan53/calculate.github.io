@@ -1,0 +1,217 @@
+@charset "UTF-8";
+/*************************************************************************
+ * Cipher Copyright © 2017, Ellusionist.com, Inc
+ *
+ * You probably shouldn't be looking at this. We're unable to stop you so we've made it really difficult to read.
+ * 
+ * ELLUSIONIST CONFIDENTIAL
+ * __________________
+ * 
+ *  2017 Ellusionist.com, Inc 
+ *  All Rights Reserved.
+ * 
+ * NOTICE: All information contained herein is, and remains
+ * the property of Ellusionist.com, Inc and its suppliers,
+ * if any. The intellectual and technical concepts contained
+ * herein are proprietary to Ellusionist.com, Inc
+ * and its suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * You are strictly prohibited to disseminate, reproduce, modify, reverse engineer, 
+ * decompile, disassemble, copy, publish, rent, lend, lease or derive works 
+ * from this software or circumvent any technical protection measures contained herein
+ * unless prior written permission is obtained from Ellusionist.com, Inc.
+ */
+
+.revealcell {
+    max-height: 100px;
+    text-align: center;
+    color: #ABA9A9;
+}
+
+.calcField {
+    background-color: #f1f3f2;
+    color: #1c1c1c;
+    margin: 0 auto;
+    padding: 0;
+    height: 300px;
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 100%;
+    display: block;
+}
+
+.calcField-content {
+    font-family: -apple-system;
+    font-size: 100px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    display: block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    padding-right: 5px;
+}
+
+#wholecontainer {
+    background-color: #FFF
+}
+
+body,
+html {
+    font-family: -apple-system;
+    position: fixed;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: #000;
+    width: 100vw;
+}
+
+table {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    border-color: #FFF;
+    border-width: 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    word-wrap: break-word;
+    table-layout: fixed;
+}
+
+td {
+    position: relative;
+}
+
+.numberButton {
+    font-family: -apple-system;
+    font-weight: 200;
+    background: #f7f8fa;
+    color: #707480;
+    padding: 1;
+    margin: 0 auto;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 0px;
+    text-align: center;
+    font-size: 38px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.numberButton:active {
+    font-family: -apple-system;
+    font-weight: 200;
+    background: #dedede;
+    padding: 1;
+    margin: 0 auto;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 0px;
+    text-align: center;
+    font-size: 38px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.operationButton {
+    font-family: -apple-system;
+    font-weight: normal;
+    background: #f7f8fa;
+    padding: 1;
+    margin: 0 auto;
+    /*border-color: rgba(0,0,0,0.5);*/
+    border-color: #000;
+    border-width: 0px;
+    border-style: solid;
+    border-right-style: inset;
+    text-align: center;
+    font-size: 36px;
+    color: #707480;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.operationButton:active {
+    font-family: -apple-system;
+    font-weight: normal;
+    background: #dedede;
+    padding: 1;
+    margin: 0 auto;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 0px;
+    text-align: center;
+    font-size: 36px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#btnAdd {
+    font-size: 27px !important;
+    font-weight: bold;
+}
+
+#btnDecimal {
+    font-size: 49px;
+}
+
+.topButton {
+    font-family: -apple-system;
+    font-weight: 200;
+    background: #f7f8fa;
+    color: #707480;
+    padding: 1;
+    margin: 0 auto;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 0px;
+    text-align: center;
+    font-size: 38px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.topButton:active {
+    font-family: -apple-system;
+    font-weight: 200;
+    background: #dedede;
+    padding: 1;
+    margin: 0 auto;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 0px;
+    text-align: center;
+    font-size: 38px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+td .content {
+    font: -apple-system;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: #FFFFFF;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#btnEquals {
+    background: #fb772f;
+    color: #fdfffc;
+}
